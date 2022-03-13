@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <CalendarWeek />
     <div id="calender-week">
       <div class="container-fluid mt-5">
         <div class="row">
@@ -14,7 +15,7 @@
                   <div class="alert alert-success text-center">
                     <div>Müll rausbringen</div>
                     <div>
-                      <i class="fas fa-edit mr-4"></i>
+                      <i class="fas fa-edit mr-2"></i>
                       <i class="far fa-trash-alt"></i>
                     </div>
                   </div>
@@ -39,7 +40,7 @@
                   <div class="alert alert-success text-center">
                     <div>Müll rausbringen</div>
                     <div>
-                      <i class="fas fa-edit mr-4"></i>
+                      <i class="fas fa-edit mr-2"></i>
                       <i class="far fa-trash-alt"></i>
                     </div>
                   </div>
@@ -55,7 +56,7 @@
                   <div class="alert alert-success text-center">
                     <div>Müll rausbringen</div>
                     <div>
-                      <i class="fas fa-edit mr-4"></i>
+                      <i class="fas fa-edit mr-2"></i>
                       <i class="far fa-trash-alt"></i>
                     </div>
                   </div>
@@ -89,7 +90,7 @@
                   <div class="alert alert-primary text-center">
                     <div>Grillen</div>
                     <div>
-                      <i class="fas fa-edit mr-4"></i>
+                      <i class="fas fa-edit mr-2"></i>
                       <i class="far fa-trash-alt"></i>
                     </div>
                   </div>
@@ -127,7 +128,7 @@
                       'danger',
                     ]"
                     v-bind:key="index"
-                    class="alert d-inline-block m-auto mr-2 square"
+                    class="alert mr-2 square"
                     v-bind:class="['alert-' + color]"
                     style="cursor: pointer"
                   ></span>
@@ -146,25 +147,12 @@
 </template>
 
 <script>
+import CalendarWeek from './components/CalendarWeek.vue';
+
 export default {
   name: 'App',
-  components: {},
+  components: { CalendarWeek },
 };
 </script>
 
-<style scoped>
-.bg-vue {
-  background-color: rgb(52, 73, 94);
-  color: white;
-}
-
-.bg-vue2 {
-  background-color: rgb(65, 184, 131);
-  color: white;
-}
-
-.square {
-  width: 40px;
-  height: 40px;
-}
-</style>
+<style scoped></style>
