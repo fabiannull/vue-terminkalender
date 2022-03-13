@@ -5,7 +5,7 @@ export const calendarWeekData = [
     fullName: 'Montag',
     events: [
       { title: 'Vue.JS Lernen', edit: false, color: 'success' },
-      { title: 'Vue.JS üben', edit: false, color: 'indo' },
+      { title: 'Vue.JS üben', edit: false, color: 'info' },
     ],
     active: false,
   },
