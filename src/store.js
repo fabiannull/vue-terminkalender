@@ -39,4 +39,28 @@ export const store = {
       });
     });
   },
+  updateEvent(dayId, oldEventTitle, newEventTitle) {
+    const dayObject = this.state.calendarWeekData.find(
+      (day) => day.id === dayId
+    );
+    const eventObject = dayObject.events.find(
+      (event) => event.title === oldEventTitle
+    );
+    eventObject.title = newEventTitle;
+    eventObject.edit = false;
+  },
+  deleteEvent(dayId, eventTitle) {
+    const dayObject = this.state.calendarWeekData.find(
+      (day) => day.id === dayId
+    );
+    const eventIndex = dayObject.events.findIndex(
+      (event) => event.title === eventTitle
+    );
+    dayObject.events.splice(eventIndex, 1);
+  },
+  emptyCalendar() {
+    this.state.calendarWeekData.map((dayObject) => {
+      dayObject.events = [];
+    });
+  },
 };

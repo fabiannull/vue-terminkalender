@@ -1,7 +1,8 @@
 <template>
   <div class="card">
     <div
-      class="card-header text-center bg-vue"
+      class="card-header text-center"
+      :class="[day.active ? activeClass : defaultClass]"
       style="cursor: pointer"
       @click="setActiveDay(day.id)"
     >
@@ -27,6 +28,12 @@ import { store } from '../store.js';
 export default {
   name: 'CalendarDay',
   components: { CalendarEvent },
+  data() {
+    return {
+      defaultClass: 'bg-vue',
+      activeClass: 'bg-vue2',
+    };
+  },
   methods: {
     setActiveDay(dayID) {
       store.setActiveDay(dayID);
